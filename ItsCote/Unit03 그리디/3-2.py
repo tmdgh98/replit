@@ -2,27 +2,27 @@ n, m, k = map(int, input().split())
 data = list(map(int, input().split()))
 m2 = m
 data.sort()
-first = data[n-1]
-second = data[n-2]
+first = data[n - 1]
+second = data[n - 2]
 
 result = 0
 
 while True:
-  for i in range(k): 
+    for i in range(k):
+        if m == 0:
+            break
+        result += first
+        m -= 1
     if m == 0:
-      break
-    result += first
+        break
+    result += second
     m -= 1
-  if m == 0:
-    break
-  result += second
-  m -= 1
 
-count = int(m2 / (k+1))*k
-count += m2 % (k+1)
+count = int(m2 / (k + 1)) * k
+count += m2 % (k + 1)
 
 result2 = 0
-result2 += (count)*first
+result2 += (count) * first
 result2 += (m2 - count) * second
 
 print(result)
